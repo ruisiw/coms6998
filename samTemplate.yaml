@@ -9,7 +9,12 @@ Resources:
       Handler: lambda_function.lambda_handler
       Runtime: python3.9
       CodeUri: ./index-photos-copy
+      MemorySize: 128
+      Timeout: 30
       Role: 'arn:aws:iam::351062784755:role/service-role/codebuild-lambdaBuildProject-service-role'
+      Environment:
+        Variables:
+          REGION: us-east-1
 
 
   SearchLambdaFunction:
@@ -19,7 +24,12 @@ Resources:
       Handler: lambda_function.lambda_handler
       Runtime: python3.9
       CodeUri: ./search-photos-copy
+      MemorySize: 128
+      Timeout: 30
       Role: 'arn:aws:iam::351062784755:role/service-role/codebuild-lambdaBuildProject-service-role'
+      Environment:
+        Variables:
+          REGION: us-east-1
 
 
 
